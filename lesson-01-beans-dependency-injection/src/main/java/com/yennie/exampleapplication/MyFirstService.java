@@ -18,14 +18,14 @@ public class MyFirstService {
 
     private final MyFirstClass myFirstClass;
 
-    // 不含 ${...} 的 @Value 是字面量，会直接注入下面的文本和数字。
-    @Value("Hello Everyone!")
+    // ${...} 表示读取配置项；Spring 会把读取到的字符串转换成字段需要的类型。
+    @Value("${my.custom.property}")
     private String literalMessage;
 
-    @Value("123")
+    @Value("${my.custom.property.int}")
     private Integer literalNumber;
 
-    // ${...} 是属性占位符，值来自 @PropertySource 加载的文件。
+    // 下面两个值来自 @PropertySource 加载的自定义配置文件。
     @Value("${app.greeting.morning}")
     private String morningGreeting;
 

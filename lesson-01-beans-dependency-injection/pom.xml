@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.yennie</groupId>
-    <artifactId>ExampleApplication</artifactId>
+    <artifactId>lesson-01-beans-dependency-injection</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ExampleApplication</name>
-    <description>ExampleApplication</description>
+    <name>Lesson 01 - Beans and Dependency Injection</name>
+    <description>Spring beans, qualifiers, primary beans, properties, and constructor injection</description>
     <url/>
     <licenses>
         <license/>

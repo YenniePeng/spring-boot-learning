@@ -2,7 +2,7 @@
 
 这是一个持续更新的 Spring Boot 学习仓库，用来保存课程示例、概念验证和练习代码。
 
-每个知识点放在独立的 `lesson` 子目录中，并作为独立 Maven 项目运行。后续学习 Spring MVC、REST API、数据库、JPA、PostgreSQL 和 Docker 时，会继续按照编号追加，不需要重新创建仓库。
+每个知识点放在独立的 `lesson` 子目录中，并作为独立 Maven 模块运行。仓库根目录是 Maven 聚合项目，使用 IntelliJ 打开整个仓库即可同时管理所有课程。后续学习 Spring MVC、REST API、数据库、JPA、PostgreSQL 和 Docker 时，会继续按照编号追加。
 
 ## 当前课程
 
@@ -36,18 +36,22 @@ ExampleApplication
 
 ## 运行方式
 
-需要安装项目 `pom.xml` 中指定的 JDK。进入 Lesson 目录后，可以使用 Maven Wrapper 运行：
+需要安装 Lesson `pom.xml` 中指定的 JDK。Maven Wrapper 位于仓库根目录，可以在根目录运行 Lesson 1：
 
 ```bash
-cd lesson-01-beans-dependency-injection
-./mvnw spring-boot:run
+./mvnw -pl lesson-01-beans-dependency-injection spring-boot:run
 ```
 
-运行测试：
+在根目录运行所有 Lesson 的测试：
 
 ```bash
-cd lesson-01-beans-dependency-injection
 ./mvnw test
+```
+
+也可以只测试 Lesson 1：
+
+```bash
+./mvnw -pl lesson-01-beans-dependency-injection test
 ```
 
 Windows 用户可以把 `./mvnw` 换成：
@@ -64,24 +68,28 @@ mvnw.cmd
 
 ```text
 spring-boot-learning/
+├── .mvn/
+├── mvnw
+├── pom.xml
 ├── lesson-01-beans-dependency-injection/
 ├── lesson-02-topic-name/
 ├── lesson-03-topic-name/
 └── README.md
 ```
 
-每个 Lesson 都保留自己的：
+每个 Lesson 保留自己的 Maven 配置和源码：
 
 ```text
 pom.xml
-mvnw
-.mvn/
 src/main/
 src/test/
 ```
 
-这样每一课都可以独立导入 IntelliJ、编译、测试和运行，不会让不同课程的依赖及配置互相影响。
+根目录 `pom.xml` 通过 `<modules>` 注册所有课程。这样可以直接在 IntelliJ 中打开整个仓库，同时编译和测试所有 Lesson，而不同课程仍然拥有独立依赖及配置。
 
 ## 后续更新
 
-每学完一个新的 Spring Boot 知识点，就新增一个编号 Lesson，并同步更新本 README 的课程列表。
+每学完一个新的 Spring Boot 知识点，就新增一个编号 Lesson，并完成两项更新：
+
+1. 在根目录 `pom.xml` 的 `<modules>` 中注册新 Lesson。
+2. 在本 README 的课程列表中记录主题和主要知识点。
