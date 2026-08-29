@@ -9,6 +9,7 @@
 | Lesson | 主题 | 主要知识点 |
 | --- | --- | --- |
 | `lesson-01-beans-dependency-injection` | Beans & Dependency Injection | Spring 容器、`@Configuration`、`@Bean`、`@Primary`、`@Qualifier`、构造器注入、`@Value`、`@PropertySource` |
+| `lesson-02-spring-profiles` | Spring Profiles | `@Profile`、激活环境、环境专属 Bean、`application-{profile}.properties`、默认配置与配置优先级 |
 
 ## Lesson 01：Beans & Dependency Injection
 
@@ -32,6 +33,30 @@ MyFirstClass Beans
 MyFirstService
        ↓ 从容器获取并调用
 ExampleApplication
+```
+
+## Lesson 02：Spring Profiles
+
+本课演示如何通过 Profile 在不同运行环境中选择不同的 Bean 和配置值。
+
+- `ProfileApplication`：使用 `dev` 作为默认 Profile，同时允许外部配置覆盖
+- `ApplicationConfig`：分别为 `dev` 和 `test` 创建名为 `profileBean` 的 Bean
+- `ProfileService`：通过同一个 Bean 名称注入当前环境对应的对象
+- `application-dev.properties`：开发环境配置
+- `application-test.properties`：测试环境配置
+- Profile 测试：分别验证 `dev` 和 `test` 环境加载的内容
+
+运行默认的 `dev` 环境：
+
+```bash
+./mvnw -pl lesson-02-spring-profiles spring-boot:run
+```
+
+使用 `test` 环境运行：
+
+```bash
+./mvnw -pl lesson-02-spring-profiles spring-boot:run \
+  -Dspring-boot.run.arguments=--spring.profiles.active=test
 ```
 
 ## 运行方式

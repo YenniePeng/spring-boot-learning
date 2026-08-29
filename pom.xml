@@ -15,5 +15,6 @@
     <!-- 每增加一课，就在这里注册对应的 Maven 模块。 -->
     <modules>
         <module>lesson-01-beans-dependency-injection</module>
+        <module>lesson-02-spring-profiles</module>
     </modules>
 </project>
