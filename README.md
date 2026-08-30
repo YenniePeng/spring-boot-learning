@@ -10,6 +10,7 @@
 | --- | --- | --- |
 | `lesson-01-beans-dependency-injection` | Beans & Dependency Injection | Spring 容器、`@Configuration`、`@Bean`、`@Primary`、`@Qualifier`、构造器注入、`@Value`、`@PropertySource` |
 | `lesson-02-spring-profiles` | Spring Profiles | `@Profile`、激活环境、环境专属 Bean、`application-{profile}.properties`、默认配置与配置优先级 |
+| `lesson-03-rest-api-basics` | REST API Basics | `@RestController`、GET/POST、`@RequestBody`、`@PathVariable`、`@RequestParam`、Jackson、JavaBean 与 Record |
 
 ## Lesson 01：Beans & Dependency Injection
 
@@ -57,6 +58,21 @@ ExampleApplication
 ```bash
 ./mvnw -pl lesson-02-spring-profiles spring-boot:run \
   -Dspring-boot.run.arguments=--spring.profiles.active=test
+```
+
+## Lesson 03：REST API Basics
+
+本课创建第一个 REST Controller，并通过 Postman 观察 HTTP 请求如何转换成 Java 数据。
+
+- `FirstController`：GET、POST、路径变量、查询参数和请求体示例
+- `Order`：使用 getter/setter 的传统 JavaBean
+- `OrderRecord`：使用构造器接收数据的简洁 Record
+- `api-test.http`：完整请求样例，也可以复制到 Postman 中测试
+
+运行 Lesson 03：
+
+```bash
+./mvnw -pl lesson-03-rest-api-basics spring-boot:run
 ```
 
 ## 运行方式

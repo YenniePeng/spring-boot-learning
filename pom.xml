@@ -16,5 +16,6 @@
     <modules>
         <module>lesson-01-beans-dependency-injection</module>
         <module>lesson-02-spring-profiles</module>
+        <module>lesson-03-rest-api-basics</module>
     </modules>
 </project>

@@ -1,0 +1,31 @@
+### Path variable
+GET http://localhost:8080/hello/Yennie
+
+### Query parameters
+GET http://localhost:8080/hello?user-name=Yennie&user-lastname=Peng
+
+### Plain text request body
+POST http://localhost:8080/post
+Content-Type: text/plain
+
+Hello Spring Boot!
+
+### JSON mapped to a JavaBean
+POST http://localhost:8080/post-order
+Content-Type: application/json
+
+{
+  "customerName": "Lucy",
+  "productName": "iPhone",
+  "quantity": 1
+}
+
+### JSON mapped to a record
+POST http://localhost:8080/post-order-record
+Content-Type: application/json
+
+{
+  "customerName": "Lucy",
+  "productName": "iPhone",
+  "quantity": 1
+}
