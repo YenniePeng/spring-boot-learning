@@ -1,0 +1,34 @@
+### 1. Create a school first
+POST http://localhost:8080/schools
+Content-Type: application/json
+
+{
+  "name": "Spring School"
+}
+
+### 2. Create a student using the real school ID returned above
+POST http://localhost:8080/students
+Content-Type: application/json
+
+{
+  "firstName": "Yennie",
+  "lastName": "Peng",
+  "email": "yennie@example.com",
+  "age": 20,
+  "schoolId": 1
+}
+
+### Find all schools
+GET http://localhost:8080/schools
+
+### Find all students
+GET http://localhost:8080/students
+
+### Find one student
+GET http://localhost:8080/students/1
+
+### Search first name (case-insensitive, partial match)
+GET http://localhost:8080/students/search/yen
+
+### Delete one student
+DELETE http://localhost:8080/students/1

@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: lesson-04-jpa-postgresql-relations-dto
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/springboot_db}
+    username: ${DB_USERNAME:yennie}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      # 学习时保留已有数据；生产项目通常改用 Flyway/Liquibase 管理表结构。
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true

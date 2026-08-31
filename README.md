@@ -11,6 +11,7 @@
 | `lesson-01-beans-dependency-injection` | Beans & Dependency Injection | Spring 容器、`@Configuration`、`@Bean`、`@Primary`、`@Qualifier`、构造器注入、`@Value`、`@PropertySource` |
 | `lesson-02-spring-profiles` | Spring Profiles | `@Profile`、激活环境、环境专属 Bean、`application-{profile}.properties`、默认配置与配置优先级 |
 | `lesson-03-rest-api-basics` | REST API Basics | `@RestController`、GET/POST、`@RequestBody`、`@PathVariable`、`@RequestParam`、Jackson、JavaBean 与 Record |
+| `lesson-04-jpa-postgresql-relations-dto` | JPA & PostgreSQL | Entity、Repository、PostgreSQL、`@OneToMany`、`@ManyToOne`、`@OneToOne`、外键、DTO |
 
 ## Lesson 01：Beans & Dependency Injection
 
@@ -76,6 +77,27 @@ cd lesson-03-rest-api-basics
 ./mvnw spring-boot:run
 ```
 
+## Lesson 04：JPA、PostgreSQL、Relationships 与 DTO
+
+本课把 Java 对象保存到 PostgreSQL，并演示学生、学校与学生资料之间的关系。
+
+- `School` 和 `Student`：一所学校对应多名学生
+- `Student` 和 `StudentProfile`：一名学生对应一份资料
+- Repository：使用 Spring Data JPA 执行保存、查询和删除
+- DTO：把 API 数据结构与数据库实体分开，避免暴露不需要的字段
+- `api-test.http`：创建学校、创建学生、查询和删除的请求样例
+- 测试使用内存 H2 数据库，因此测试时不要求启动 Docker
+
+运行前先启动 PostgreSQL，并通过环境变量提供密码（不要把真实密码提交到 Git）：
+
+```bash
+cd lesson-04-jpa-postgresql-relations-dto
+export DB_PASSWORD=your_password
+./mvnw spring-boot:run
+```
+
+请求的正确顺序是先创建 School，再把返回的 School ID 放进 Student 请求。否则 PostgreSQL 会报告外键不存在。
+
 ## 运行方式
 
 需要安装 Lesson `pom.xml` 中指定的 JDK。以 Lesson 01 为例，先进入课程目录：
@@ -121,6 +143,11 @@ spring-boot-learning/
 │   ├── pom.xml
 │   └── src/
 ├── lesson-03-rest-api-basics/
+│   ├── .mvn/
+│   ├── mvnw
+│   ├── pom.xml
+│   └── src/
+├── lesson-04-jpa-postgresql-relations-dto/
 │   ├── .mvn/
 │   ├── mvnw
 │   ├── pom.xml
