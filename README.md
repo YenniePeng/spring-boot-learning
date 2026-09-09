@@ -12,6 +12,7 @@
 | `lesson-02-spring-profiles` | Spring Profiles | `@Profile`、激活环境、环境专属 Bean、`application-{profile}.properties`、默认配置与配置优先级 |
 | `lesson-03-rest-api-basics` | REST API Basics | `@RestController`、GET/POST、`@RequestBody`、`@PathVariable`、`@RequestParam`、Jackson、JavaBean 与 Record |
 | `lesson-04-jpa-postgresql-relations-dto` | JPA & PostgreSQL | Entity、Repository、PostgreSQL、`@OneToMany`、`@ManyToOne`、`@OneToOne`、外键、DTO |
+| [lesson-05-service-mapper-package-structure](lesson-05-service-mapper-package-structure/README.md) | Service、Mapper 与业务分包 | Controller/Service/Repository 职责、手写 Mapper、构造器注入、事务、按业务模块组织代码 |
 
 ## Lesson 01：Beans & Dependency Injection
 
@@ -98,6 +99,20 @@ export DB_PASSWORD=your_password
 
 请求的正确顺序是先创建 School，再把返回的 School ID 放进 Student 请求。否则 PostgreSQL 会报告外键不存在。
 
+## Lesson 05：Service、Mapper 与业务分包
+
+把 lesson-4 中 Controller 的业务逻辑提取到 Service，把 DTO 转换提取到 Mapper。
+代码按 school、student、studentprofile 组织，每个业务模块内保留各自的分层类。
+学校接口返回 ID，便于创建学生；HTTP 测试使用内存 H2，不要求启动 Docker。
+
+完整目录树、职责说明、配置与 Postman 操作见 [Lesson 05 学习说明](lesson-05-service-mapper-package-structure/README.md)。
+
+```bash
+cd lesson-05-service-mapper-package-structure
+export DB_PASSWORD=your_password
+./mvnw spring-boot:run
+```
+
 ## 运行方式
 
 需要安装 Lesson `pom.xml` 中指定的 JDK。以 Lesson 01 为例，先进入课程目录：
@@ -151,6 +166,12 @@ spring-boot-learning/
 │   ├── .mvn/
 │   ├── mvnw
 │   ├── pom.xml
+│   └── src/
+├── lesson-05-service-mapper-package-structure/
+│   ├── .mvn/
+│   ├── mvnw
+│   ├── pom.xml
+│   ├── README.md
 │   └── src/
 └── README.md
 ```
