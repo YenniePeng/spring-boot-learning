@@ -13,6 +13,7 @@
 | `lesson-03-rest-api-basics` | REST API Basics | `@RestController`、GET/POST、`@RequestBody`、`@PathVariable`、`@RequestParam`、Jackson、JavaBean 与 Record |
 | `lesson-04-jpa-postgresql-relations-dto` | JPA & PostgreSQL | Entity、Repository、PostgreSQL、`@OneToMany`、`@ManyToOne`、`@OneToOne`、外键、DTO |
 | [lesson-05-service-mapper-package-structure](lesson-05-service-mapper-package-structure/README.md) | Service、Mapper 与业务分包 | Controller/Service/Repository 职责、手写 Mapper、构造器注入、事务、按业务模块组织代码 |
+| [lesson-06-validation-unit-testing](lesson-06-validation-unit-testing/README.md) | 参数校验与单元测试 | @Valid、Bean Validation、异常响应、JUnit、Mockito、Mock 与集成测试 |
 
 ## Lesson 01：Beans & Dependency Injection
 
@@ -113,6 +114,20 @@ export DB_PASSWORD=your_password
 ./mvnw spring-boot:run
 ```
 
+## Lesson 06：参数校验、异常处理与单元测试
+
+在 lesson-5 的分层结构上新增请求校验和字段错误响应，通过 JUnit 与 Mockito 测试 Service。
+本课区分真实对象与 Mock、待保存实体与保存结果，并使用 HTTP 测试验证错误请求不会写入数据库。
+
+完整说明见 [Lesson 06 学习说明](lesson-06-validation-unit-testing/README.md)。
+
+```bash
+cd lesson-06-validation-unit-testing
+./mvnw test
+```
+
+测试不需要 Docker。启动应用仍需运行 PostgreSQL 并设置 DB_PASSWORD，再执行 ./mvnw spring-boot:run。
+
 ## 运行方式
 
 需要安装 Lesson `pom.xml` 中指定的 JDK。以 Lesson 01 为例，先进入课程目录：
@@ -168,6 +183,12 @@ spring-boot-learning/
 │   ├── pom.xml
 │   └── src/
 ├── lesson-05-service-mapper-package-structure/
+│   ├── .mvn/
+│   ├── mvnw
+│   ├── pom.xml
+│   ├── README.md
+│   └── src/
+├── lesson-06-validation-unit-testing/
 │   ├── .mvn/
 │   ├── mvnw
 │   ├── pom.xml

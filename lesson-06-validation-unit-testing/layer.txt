@@ -1,0 +1,31 @@
+com
+└── myapp
+    ├── product
+    ├── order
+    ├── customer
+    └── payment
+
+com
+└── myapp
+    ├── controllers
+    ├── services
+    ├── repositories
+    ├── models
+    └── utils
+
+com
+└── myapp
+    ├── patientManagement
+    ├── billing
+    ├── scheduling
+    └── medicalRecords
+
+
+com
+└── myapp
+    ├── usercomponent
+    │   ├── controllers
+    │   └── services
+    └── productcomponent
+        ├── controllers
+        └── services
