@@ -16,6 +16,7 @@
 | [lesson-06-validation-unit-testing](lesson-06-validation-unit-testing/README.md) | 参数校验与单元测试 | @Valid、Bean Validation、异常响应、JUnit、Mockito、Mock 与集成测试 |
 | [lesson-07-spring-data-jpa](lesson-07-spring-data-jpa/README.md) | 深入 Spring Data JPA | 实体映射、主键生成、Repository、One-to-One、One-to-Many、Many-to-Many、PostgreSQL/MySQL Profile |
 | [lesson-08-jpa-relationships-inheritance](lesson-08-jpa-relationships-inheritance/README.md) | 实体关系与继承映射 | @MappedSuperclass、SINGLE_TABLE、鉴别列、@SuperBuilder、实体关联 |
+| [lesson-09-jpa-embedded](lesson-09-jpa-embedded/README.md) | Embedded 值对象与复合主键 | @Embeddable、@Embedded、@EmbeddedId、地址字段展开、复合主键查询 |
 
 ## Lesson 01：Beans & Dependency Injection
 
