@@ -14,6 +14,7 @@
 | `lesson-04-jpa-postgresql-relations-dto` | JPA & PostgreSQL | Entity、Repository、PostgreSQL、`@OneToMany`、`@ManyToOne`、`@OneToOne`、外键、DTO |
 | [lesson-05-service-mapper-package-structure](lesson-05-service-mapper-package-structure/README.md) | Service、Mapper 与业务分包 | Controller/Service/Repository 职责、手写 Mapper、构造器注入、事务、按业务模块组织代码 |
 | [lesson-06-validation-unit-testing](lesson-06-validation-unit-testing/README.md) | 参数校验与单元测试 | @Valid、Bean Validation、异常响应、JUnit、Mockito、Mock 与集成测试 |
+| [lesson-07-spring-data-jpa](lesson-07-spring-data-jpa/README.md) | 深入 Spring Data JPA | 实体映射、主键生成、Repository、One-to-One、One-to-Many、Many-to-Many、PostgreSQL/MySQL Profile |
 
 ## Lesson 01：Beans & Dependency Injection
 
@@ -128,6 +129,17 @@ cd lesson-06-validation-unit-testing
 
 测试不需要 Docker。启动应用仍需运行 PostgreSQL 并设置 DB_PASSWORD，再执行 ./mvnw spring-boot:run。
 
+## Lesson 07：深入 Spring Data JPA
+
+通过作者、课程、章节、课时和资源模型学习 Spring Data JPA 的实体关系、关系拥有方、外键与中间表。
+
+完整说明见 [Lesson 07 学习说明](lesson-07-spring-data-jpa/README.md)。
+
+```bash
+cd lesson-07-spring-data-jpa
+./mvnw test
+```
+
 ## 运行方式
 
 需要安装 Lesson `pom.xml` 中指定的 JDK。以 Lesson 01 为例，先进入课程目录：
@@ -189,6 +201,12 @@ spring-boot-learning/
 │   ├── README.md
 │   └── src/
 ├── lesson-06-validation-unit-testing/
+│   ├── .mvn/
+│   ├── mvnw
+│   ├── pom.xml
+│   ├── README.md
+│   └── src/
+├── lesson-07-spring-data-jpa/
 │   ├── .mvn/
 │   ├── mvnw
 │   ├── pom.xml
