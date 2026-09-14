@@ -17,6 +17,8 @@
 | [lesson-07-spring-data-jpa](lesson-07-spring-data-jpa/README.md) | 深入 Spring Data JPA | 实体映射、主键生成、Repository、One-to-One、One-to-Many、Many-to-Many、PostgreSQL/MySQL Profile |
 | [lesson-08-jpa-relationships-inheritance](lesson-08-jpa-relationships-inheritance/README.md) | 实体关系与继承映射 | @MappedSuperclass、SINGLE_TABLE、鉴别列、@SuperBuilder、实体关联 |
 | [lesson-09-jpa-embedded](lesson-09-jpa-embedded/README.md) | Embedded 值对象与复合主键 | @Embeddable、@Embedded、@EmbeddedId、地址字段展开、复合主键查询 |
+| [lesson-10-jpa-derived-queries](lesson-10-jpa-derived-queries/README.md) | 派生查询与 JPQL 更新 | IgnoreCase、Containing、StartsWith、EndsWith、In、@Query、@Modifying、JavaFaker |
+| [lesson-11-jpa-named-queries-specifications](lesson-11-jpa-named-queries-specifications/README.md) | 命名查询与动态条件（JPA 最后一章） | @NamedQuery、JpaSpecificationExecutor、Specification、Criteria、and/or 分组 |
 
 ## Lesson 01：Beans & Dependency Injection
 
